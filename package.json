@@ -1,0 +1,34 @@
+{
+  "name": "starter-npm-scripts",
+  "version": "1.0.0",
+  "description": "- for small projects (HTML, CSS, JS)",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server 'src' --no-notify --no-ui --cwd 'src' --files '*.html,styles/**/*'",
+    "test": "editorconfig-checker --exclude '.git|node_modules|.idea|.DS_Store'",
+    "styles": "postcss src/styles/style.css --use postcss-import --use postcss-csso --no-map --output dist/styles/style.css",
+    "html": "html-minifier --remove-comments --input-dir src --output-dir dist --file-ext html",
+    "assets": "cp -R src/assets/. dist/assets",
+    "scripts": "cp -R src/scripts/. dist/scripts",
+    "clean": "rm -r dist",
+    "build": "npm run clean && npm run styles && npm run html && npm run assets && npm run scripts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yoona8/starter-npm-scripts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yoona8/starter-npm-scripts/issues"
+  },
+  "homepage": "https://github.com/Yoona8/starter-npm-scripts#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "editorconfig-checker": "^3.1.0",
+    "html-minifier": "^4.0.0",
+    "postcss-cli": "^7.1.2",
+    "postcss-csso": "^4.0.0",
+    "postcss-import": "^12.0.1"
+  }
+}
