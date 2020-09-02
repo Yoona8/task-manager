@@ -1,0 +1,10 @@
+.logo {
+  font-weight: 700;
+  color: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.logo:hover {
+  text-decoration: underline;
+}

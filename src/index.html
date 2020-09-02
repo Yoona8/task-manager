@@ -4,11 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Title</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-  <h1>Test page</h1>
-  <img src="assets/images/cupcake-8.png" alt="Cupcake">
-  <script src="scripts/main.js"></script>
+  <header class="header">
+    <nav class="header__nav container">
+      <a href="index.html" class="header__logo logo">TaskManager</a>
+      <ul class="user-menu">
+        <li>
+          <a href="#">Add new task</a>
+        </li>
+      </ul>
+      <ul class="header__menu menu">
+        <li>
+          <a href="#">Tasks</a>
+        </li>
+        <li>
+          <a href="#">Statistics</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="container">
+      <ul class="main__filters filters">
+        <li>
+          <button class="current" type="button">All 20</button>
+        </li>
+        <li>
+          <button type="button" disabled>Overdue 20</button>
+        </li>
+        <li>
+          <button type="button">Today 20</button>
+        </li>
+        <li>
+          <button type="button">Repeating 20</button>
+        </li>
+        <li>
+          <button type="button">Favorites 20</button>
+        </li>
+        <li>
+          <button type="button">Archive 20</button>
+        </li>
+      </ul>
+      <section class="board">
+        <h1 class="visually-hidden">List of tasks</h1>
+        <ul class="main__sorting sorting">
+          <li>
+            <a href="#">By default</a>
+          </li>
+          <li>
+            <a href="#">By date up</a>
+          </li>
+          <li>
+            <a href="#">By date down</a>
+          </li>
+        </ul>
+        <ul class="main__tasks tasks">
+          <li>Task</li>
+          <li>Task</li>
+          <li>Task</li>
+          <li>Task</li>
+        </ul>
+        <button class="button" type="button">Load more</button>
+      </section>
+    </div>
+  </main>
 </body>
 </html>

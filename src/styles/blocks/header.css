@@ -1,0 +1,19 @@
+.header {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  color: var(--basic-white);
+  background-color: var(--dark-green);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  margin-right: 20px;
+}
+
+.header__menu {
+  margin-left: auto;
+}

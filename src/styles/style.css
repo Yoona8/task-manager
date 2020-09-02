@@ -1,3 +1,9 @@
-body {
-  background-color: rosybrown;
-}
+@import "settings/setting.css";
+@import "blocks/menu.css";
+@import "blocks/tasks.css";
+@import "blocks/sorting.css";
+@import "blocks/filters.css";
+@import "blocks/main.css";
+@import "blocks/header.css";
+@import "blocks/logo.css";
+@import "blocks/user-menu.css";

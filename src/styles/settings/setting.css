@@ -1,0 +1,43 @@
+:root {
+  --basic-white: #ffffff;
+  --basic-black: #000000;
+  --dark-green: #6D7661;
+  --border-radius-large: 30px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 1200px;
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

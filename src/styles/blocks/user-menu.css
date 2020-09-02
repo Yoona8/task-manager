@@ -1,0 +1,15 @@
+.user-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.user-menu a {
+  color: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.user-menu a:hover {
+  text-decoration: underline;
+}

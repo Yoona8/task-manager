@@ -1,0 +1,21 @@
+.main {
+  margin-top: -30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+  border-top-left-radius: var(--border-radius-large);
+  border-top-right-radius: var(--border-radius-large);
+}
+
+.main__filters {
+  margin-bottom: 20px;
+}
+
+.main__sorting {
+  margin-bottom: 20px;
+}
+
+.main__tasks {
+  margin-bottom: 20px;
+}

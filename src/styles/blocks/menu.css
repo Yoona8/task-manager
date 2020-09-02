@@ -1,0 +1,21 @@
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.menu a {
+  color: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
