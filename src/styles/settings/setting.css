@@ -1,8 +1,15 @@
 :root {
-  --basic-white: #ffffff;
+  --basic-white: #FFFFFF;
   --basic-black: #000000;
+  --neutral-gray: #BBBBBB;
   --dark-green: #6D7661;
+  --mild-green: #A2A592;
+  --dark-orange: #FBA67D;
+  --mild-orange: #FDBB99;
+  --dark-red: #7B0207;
+  --mild-red: #B8301A;
   --border-radius-large: 30px;
+  --transition: 0.2s;
 }
 
 html,

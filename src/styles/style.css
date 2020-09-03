@@ -1,5 +1,6 @@
 @import "settings/setting.css";
 @import "blocks/menu.css";
+@import "blocks/task.css";
 @import "blocks/tasks.css";
 @import "blocks/sorting.css";
 @import "blocks/filters.css";
