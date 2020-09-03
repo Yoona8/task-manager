@@ -19,6 +19,9 @@
   text-transform: uppercase;
   background-color: transparent;
   border: 0;
+}
+
+.filters button:not(:disabled) {
   cursor: pointer;
 }
 

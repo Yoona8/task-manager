@@ -1,0 +1,21 @@
+.sorting {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sorting li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.sorting a {
+  color: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.sorting a:hover {
+  text-decoration: underline;
+}
