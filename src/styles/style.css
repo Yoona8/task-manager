@@ -1,5 +1,7 @@
 @import "settings/setting.css";
 @import "blocks/menu.css";
+@import "blocks/input.css";
+@import "blocks/button.css";
 @import "blocks/task.css";
 @import "blocks/tasks.css";
 @import "blocks/sorting.css";
@@ -8,3 +10,4 @@
 @import "blocks/header.css";
 @import "blocks/logo.css";
 @import "blocks/user-menu.css";
+@import "blocks/board.css";

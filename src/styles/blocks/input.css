@@ -1,0 +1,31 @@
+.input {
+  margin-bottom: 10px;
+}
+
+.input label {
+  display: block;
+  font-size: 12px;
+}
+
+.input input,
+.input textarea {
+  width: 100%;
+  padding: 8px 15px;
+  font: inherit;
+  border: 1px solid var(--basic-black);
+  border-radius: var(--border-radius-small);
+  box-sizing: border-box;
+  transition: var(--transition);
+  outline: none;
+}
+
+.input input:focus,
+.input textarea:focus,
+.input input:hover,
+.input textarea:hover {
+  border-color: var(--mild-green);
+}
+
+.input textarea {
+  resize: none;
+}

@@ -62,92 +62,141 @@
           </li>
         </ul>
         <ul class="main__tasks tasks">
-          <li class="tasks__task task task--lowest">
-            <div class="task__controls">
-              <button class="task__control">Edit</button>
-              <button class="task__control">Favorite</button>
-              <button class="task__control">Archive</button>
-            </div>
-            <p class="task__priority" aria-label="Lowest priority"></p>
-            <p class="task__description">
-              Default task with default options selected on creation.
-            </p>
-            <time class="task__deadline" datetime="2020-09-24T12:00">
-              Sep 24, 12:00
-            </time>
+          <li class="tasks__task">
+            <article class="task task--lowest">
+              <div class="task__controls">
+                <button class="task__control">Edit</button>
+                <button class="task__control">Favorite</button>
+                <button class="task__control">Archive</button>
+              </div>
+              <p class="task__priority" aria-label="Lowest priority"></p>
+              <h2 class="task__title">Title</h2>
+              <p class="task__description">
+                Default task with default options selected on creation.
+              </p>
+              <time class="task__deadline" datetime="2020-09-24T12:00">
+                Sep 24, 12:00
+              </time>
+            </article>
           </li>
-          <li class="tasks__task task task--low">
-            <div class="task__controls">
-              <button class="task__control">Edit</button>
-              <button class="task__control">Favorite</button>
-              <button class="task__control">Archive</button>
-            </div>
-            <p class="task__priority" aria-label="Lowest priority"></p>
-            <p class="task__description">
-              Default task with default options selected on creation.
-            </p>
-            <time class="task__deadline" datetime="2020-09-24T12:00">
-              Sep 24, 12:00
-            </time>
+          <li class="tasks__task">
+            <article class="task task--lowest task--overdue">
+              <div class="task__controls">
+                <button class="task__control">Edit</button>
+                <button class="task__control">Favorite</button>
+                <button class="task__control">Archive</button>
+              </div>
+              <p class="task__priority" aria-label="Lowest priority"></p>
+              <h2 class="task__title">Title</h2>
+              <p class="task__description">
+                Default task with default options selected on creation.
+              </p>
+              <time class="task__deadline" datetime="2020-09-24T12:00">
+                Sep 24, 12:00
+              </time>
+            </article>
           </li>
-          <li class="tasks__task task task--normal">
-            <div class="task__controls">
-              <button class="task__control">Edit</button>
-              <button class="task__control">Favorite</button>
-              <button class="task__control">Archive</button>
-            </div>
-            <p class="task__priority" aria-label="Lowest priority"></p>
-            <p class="task__description">
-              Default task with default options selected on creation.
-            </p>
-            <time class="task__deadline" datetime="2020-09-24T12:00">
-              Sep 24, 12:00
-            </time>
-          </li>
-          <li class="tasks__task task task--slightly-high">
-            <div class="task__controls">
-              <button class="task__control">Edit</button>
-              <button class="task__control">Favorite</button>
-              <button class="task__control">Archive</button>
-            </div>
-            <p class="task__priority" aria-label="Lowest priority"></p>
-            <p class="task__description">
-              Default task with default options selected on creation.
-            </p>
-            <time class="task__deadline" datetime="2020-09-24T12:00">
-              Sep 24, 12:00
-            </time>
-          </li>
-          <li class="tasks__task task task--high">
-            <div class="task__controls">
-              <button class="task__control">Edit</button>
-              <button class="task__control">Favorite</button>
-              <button class="task__control">Archive</button>
-            </div>
-            <p class="task__priority" aria-label="Lowest priority"></p>
-            <p class="task__description">
-              Default task with default options selected on creation.
-            </p>
-            <time class="task__deadline" datetime="2020-09-24T12:00">
-              Sep 24, 12:00
-            </time>
-          </li>
-          <li class="tasks__task task task--highest task--overdue">
-            <div class="task__controls">
-              <button class="task__control">Edit</button>
-              <button class="task__control">Favorite</button>
-              <button class="task__control">Archive</button>
-            </div>
-            <p class="task__priority" aria-label="Lowest priority"></p>
-            <p class="task__description">
-              Default task with default options selected on creation.
-            </p>
-            <time class="task__deadline" datetime="2020-09-24T12:00">
-              Sep 24, 12:00
-            </time>
+          <li class="tasks__task">
+            <article class="task task--lowest task--overdue">
+              <div class="task__controls">
+                <button class="task__control">Edit</button>
+                <button class="task__control">Favorite</button>
+                <button class="task__control">Archive</button>
+              </div>
+              <p class="task__priority" aria-label="Lowest priority"></p>
+              <h2 class="task__title">Title</h2>
+              <p class="task__description">
+                Default task with default options selected on creation.
+              </p>
+              <time class="task__deadline" datetime="2020-09-24T12:00">
+                Sep 24, 12:00
+              </time>
+            </article>
+            <article class="task task--edit task--lowest">
+              <form class="task__form" action="#" id="task-1">
+                <p class="task__priority" aria-label="Lowest priority"></p>
+                <ul class="task__fields">
+                  <li class="input">
+                    <label for="task-1-title">Title</label>
+                    <input name="task-1-title" id="task-1-title" type="text">
+                  </li>
+                  <li class="input">
+                    <label for="task-1-description">Description</label>
+                    <textarea
+                      name="task-1-description"
+                      id="task-1-description"
+                      rows="3"
+                    ></textarea>
+                  </li>
+                  <li class="input input--date">
+                    <label for="task-1-date">Date</label>
+                    <input name="task-1-date" id="task-1-date" type="text">
+                  </li>
+                  <li>
+                    <fieldset class="radio-buttons">
+                      <legend class="radio-buttons__title">
+                        Priority
+                      </legend>
+                      <ul class="radio-buttons__list radio">
+                        <li class="radio radio--lowest">
+                          <input
+                            class="visually-hidden"
+                            name="task-1-priority"
+                            id="task-1-priority-6"
+                          >
+                          <label for="task-1-priority-6">Level 6</label>
+                        </li>
+                        <li class="radio radio--low">
+                          <input
+                            class="visually-hidden"
+                            name="task-1-priority"
+                            id="task-1-priority-5"
+                          >
+                          <label for="task-1-priority-5">Level 5</label>
+                        </li>
+                        <li class="radio radio--normal">
+                          <input
+                            class="visually-hidden"
+                            name="task-1-priority"
+                            id="task-1-priority-4"
+                          >
+                          <label for="task-1-priority-4">Level 4</label>
+                        </li>
+                        <li class="radio radio--slightly-high">
+                          <input
+                            class="visually-hidden"
+                            name="task-1-priority"
+                            id="task-1-priority-3"
+                          >
+                          <label for="task-1-priority-3">Level 3</label>
+                        </li>
+                        <li class="radio radio--high">
+                          <input
+                            class="visually-hidden"
+                            name="task-1-priority"
+                            id="task-1-priority-2"
+                          >
+                          <label for="task-1-priority-2">Level 2</label>
+                        </li>
+                        <li class="radio radio--highest">
+                          <input
+                            class="visually-hidden"
+                            name="task-1-priority"
+                            id="task-1-priority-1"
+                          >
+                          <label for="task-1-priority-1">Level 1</label>
+                        </li>
+                      </ul>
+                    </fieldset>
+                  </li>
+                </ul>
+              </form>
+            </article>
           </li>
         </ul>
-        <button class="button" type="button">Load more</button>
+        <p class="board__load-more">
+          <button class="button" type="button">Load more</button>
+        </p>
       </section>
     </div>
   </main>
