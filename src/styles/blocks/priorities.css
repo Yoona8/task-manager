@@ -1,0 +1,44 @@
+.priorities {
+  display: grid;
+  grid-template-columns: repeat(6, min-content);
+  justify-content: space-between;
+}
+
+.priorities__priority label {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--color);
+}
+
+.priorities__priority--lowest label {
+  --color: var(--dark-green);
+}
+
+.priorities__priority--low label {
+  --color: var(--mild-green);
+}
+
+.priorities__priority--normal label {
+  --color: var(--mild-orange);
+}
+
+.priorities__priority--slightly-high label {
+  --color: var(--dark-orange);
+}
+
+.priorities__priority--high label {
+  --color: var(--mild-red);
+}
+
+.priorities__priority--highest label {
+  --color: var(--dark-red);
+}
+
+.priorities__priority input:focus ~ label,
+.priorities__priority input:checked ~ label {
+  box-shadow:
+    0 0 0 2px var(--basic-white),
+    0 0 0 4px var(--color);
+}

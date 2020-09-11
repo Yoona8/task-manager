@@ -2,6 +2,10 @@
 @import "blocks/menu.css";
 @import "blocks/input.css";
 @import "blocks/button.css";
+@import "blocks/radio-buttons.css";
+@import "blocks/checkbox-buttons.css";
+@import "blocks/priorities.css";
+@import "blocks/weekdays.css";
 @import "blocks/task.css";
 @import "blocks/tasks.css";
 @import "blocks/sorting.css";

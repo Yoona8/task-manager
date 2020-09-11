@@ -1,0 +1,28 @@
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, min-content);
+  justify-content: space-between;
+}
+
+.weekdays__day label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  color: var(--neutral-gray);
+  border: 1px solid var(--neutral-gray);
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.weekdays__day label:hover,
+.weekdays__day input:focus ~ label,
+.weekdays__day input:checked ~ label {
+  border-color: var(--basic-black);
+}
+
+.weekdays__day input:checked ~ label {
+  color: var(--basic-black);
+}

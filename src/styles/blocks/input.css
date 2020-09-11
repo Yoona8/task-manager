@@ -9,6 +9,7 @@
 
 .input input,
 .input textarea {
+  display: block;
   width: 100%;
   padding: 8px 15px;
   font: inherit;

@@ -1,0 +1,16 @@
+.radio-buttons {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.radio-buttons__title {
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+
+.radio-buttons__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

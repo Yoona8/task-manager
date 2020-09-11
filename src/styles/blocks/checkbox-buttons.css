@@ -1,0 +1,16 @@
+.checkbox-buttons {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.checkbox-buttons__title {
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+
+.checkbox-buttons__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

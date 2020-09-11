@@ -97,3 +97,17 @@
   padding: 0;
   list-style: none;
 }
+
+.task__fields li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.task__buttons {
+  margin: 10px 0 0;
+}
+
+.task__buttons .button {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
