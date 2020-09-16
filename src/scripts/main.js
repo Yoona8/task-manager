@@ -21,10 +21,41 @@ const getMenuTemplate = () => {
   `;
 };
 
-const render = (container, template) => {
-  container.innerHTML = template;
+const getFiltersTemplate = () => {
+  return `
+    <ul class="filters">
+      <li>
+        <button class="current" type="button">All 20</button>
+      </li>
+      <li>
+        <button type="button" disabled>Overdue 20</button>
+      </li>
+      <li>
+        <button type="button">Today 20</button>
+      </li>
+      <li>
+        <button type="button">Repeating 20</button>
+      </li>
+      <li>
+        <button type="button">Favorites 20</button>
+      </li>
+      <li>
+        <button type="button">Archive 20</button>
+      </li>
+    </ul>
+  `;
 };
 
-const menuContainer = document.querySelector('.header');
+const render = (container, template, position = 'beforeend') => {
+  container.insertAdjacentHTML(position, template);
+};
 
-render(menuContainer, getMenuTemplate());
+const headerElement = document.querySelector('.header');
+const mainElement = document.querySelector('.main');
+
+render(headerElement, getMenuTemplate());
+
+const filtersContainerElement = mainElement
+  .querySelector('.main__filters');
+
+render(filtersContainerElement, getFiltersTemplate());
