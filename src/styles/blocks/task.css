@@ -9,6 +9,7 @@
 .task--edit {
   position: absolute;
   top: 0;
+  z-index: 1;
   width: 100%;
   padding-top: 30px;
   box-sizing: border-box;
