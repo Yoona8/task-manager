@@ -4,12 +4,13 @@
   "description": "- for small projects (HTML, CSS, JS)",
   "main": "index.js",
   "scripts": {
-    "start": "browser-sync start --server 'src' --no-notify --no-ui --cwd 'src' --files '*.html,styles/**/*'",
+    "start": "webpack-dev-server",
+    "start-markup": "browser-sync start --server 'src' --no-notify --no-ui --cwd 'src' --files '*.html,styles/**/*'",
     "test": "editorconfig-checker --exclude '.git|node_modules|.idea|.DS_Store'",
     "styles": "postcss src/styles/style.css --use postcss-import --use postcss-csso --no-map --output dist/styles/style.css",
     "html": "html-minifier --remove-comments --input-dir src --output-dir dist --file-ext html",
     "assets": "cp -R src/assets/. dist/assets",
-    "scripts": "cp -R src/scripts/. dist/scripts",
+    "scripts": "webpack",
     "clean": "rm -r dist",
     "build": "npm run clean && npm run styles && npm run html && npm run assets && npm run scripts"
   },
@@ -29,6 +30,9 @@
     "html-minifier": "^4.0.0",
     "postcss-cli": "^7.1.2",
     "postcss-csso": "^4.0.0",
-    "postcss-import": "^12.0.1"
+    "postcss-import": "^12.0.1",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
   }
 }
