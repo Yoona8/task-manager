@@ -5,6 +5,12 @@ import { getTasksTemplate } from './components/tasks-component';
 import { getTaskTemplate } from './components/task-component';
 import { getTaskEditTemplate } from './components/task-edit-component';
 import { getLoadMoreTemplate } from './components/load-more-component';
+import { getTasks } from './mocks/tasks-mock';
+
+const TASKS_COUNT = 10;
+
+const tasks = getTasks(10);
+console.log(tasks);
 
 const render = (container, template, position = 'beforeend') => {
   container.insertAdjacentHTML(position, template);
@@ -28,12 +34,10 @@ render(boardElement, getLoadMoreTemplate());
 
 const tasksElement = boardElement.querySelector('.tasks');
 
-render(tasksElement, getTaskEditTemplate());
-render(tasksElement, getTaskTemplate());
-render(tasksElement, getTaskTemplate());
-render(tasksElement, getTaskTemplate());
-render(tasksElement, getTaskTemplate());
-render(tasksElement, getTaskTemplate());
-render(tasksElement, getTaskTemplate());
-render(tasksElement, getTaskTemplate());
-render(tasksElement, getTaskTemplate());
+tasks.forEach((task, index) => {
+  if (index === 0) {
+    render(tasksElement, getTaskEditTemplate(task));
+  } else {
+    render(tasksElement, getTaskTemplate(task));
+  }
+});
