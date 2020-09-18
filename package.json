@@ -12,7 +12,7 @@
     "assets": "cp -R src/assets/. dist/assets",
     "scripts": "webpack",
     "clean": "rm -r dist",
-    "build": "npm run clean && npm run styles && npm run html && npm run assets && npm run scripts"
+    "build": "npm run clean && npm run styles && npm run html && npm run assets && npm run scripts && rm -r dist/markup"
   },
   "repository": {
     "type": "git",
