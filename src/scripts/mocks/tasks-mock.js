@@ -23,24 +23,51 @@ const DESCRIPTIONS = [
   'Write a review and fill the prompts on the book club page.'
 ];
 
+const getRandomItemFromArray = (arr) => {
+  return arr[Math.floor(Math.random() * arr.length)];
+};
+
+const getRandomBoolean = () => {
+  return Math.random() > 0.5;
+};
+
+const getRandomIntegerNumber = (min, max) => {
+  return Math.round(Math.random() * (max - min) + min);
+};
+
+const getRandomDate = (range = 7000) => {
+  const isDate = getRandomBoolean();
+
+  if (!isDate) {
+    return null;
+  }
+
+  const diff = getRandomIntegerNumber(-range, range);
+  const targetDate = new Date();
+
+  targetDate.setMinutes(targetDate.getMinutes() + diff);
+
+  return targetDate;
+};
+
 const getTask = () => {
   return {
-    id: 0,
-    title: TITLES[0],
-    priority: PRIORITIES[0],
-    description: DESCRIPTIONS[2],
-    dueDate: null,
+    id: String(new Date().getMilliseconds() + Math.random()),
+    title: getRandomItemFromArray(TITLES),
+    priority: getRandomItemFromArray(PRIORITIES),
+    description: getRandomItemFromArray(DESCRIPTIONS),
+    dueDate: getRandomDate(),
     repeating: {
-      mo: false,
+      mo: getRandomBoolean(),
       tu: false,
       we: false,
-      th: true,
+      th: getRandomBoolean(),
       fr: false,
       sa: false,
       su: false
     },
-    isFavorite: true,
-    isArchive: true
+    isFavorite: getRandomBoolean(),
+    isArchive: getRandomBoolean()
   };
 };
 

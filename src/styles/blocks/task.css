@@ -95,7 +95,8 @@
 }
 
 .task__repeating li {
-  margin-right: 2px;
+  text-transform: capitalize;
+  margin-right: 5px;
 }
 
 .task__repeating,
@@ -104,7 +105,8 @@
   color: var(--dark-green);
 }
 
-.task--overdue .task__deadline {
+.task--overdue .task__deadline,
+.task--overdue .task__repeating {
   color: var(--mild-red);
 }
 

@@ -9,7 +9,7 @@ import { getTasks } from './mocks/tasks-mock';
 
 const TASKS_COUNT = 10;
 
-const tasks = getTasks(10);
+const tasks = getTasks(TASKS_COUNT);
 console.log(tasks);
 
 const render = (container, template, position = 'beforeend') => {
