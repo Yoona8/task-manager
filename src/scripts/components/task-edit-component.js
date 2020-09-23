@@ -36,6 +36,35 @@ const getPrioritiesTemplate = (taskId, currentPriority = PRIORITIES[0]) => {
   `;
 };
 
+const getRepeatingDayTemplate = (taskId, day, isChecked = false) => {
+  const checkedAttribute = isChecked ? 'checked' : '';
+
+  return `
+    <li class="weekdays__day">
+      <input
+        class="visually-hidden"
+        name="task-${taskId}-weekday-${day}"
+        id="task-${taskId}-weekday-${day}"
+        type="checkbox"
+        ${checkedAttribute}
+      >
+      <label for="task-${taskId}-weekday-${day}">${day}</label>
+    </li>
+  `;
+};
+
+const getRepeatingDaysTemplate = (taskId, repeatingDays) => {
+  const repeatingDaysTemplate = Object.keys(repeatingDays).map((day) => {
+    return getRepeatingDayTemplate(taskId, day, repeatingDays[day]);
+  }).join('');
+
+  return `
+    <ul class="checkbox-buttons__list weekdays">
+      ${repeatingDaysTemplate}
+    </ul>
+  `;
+};
+
 export const getTaskEditTemplate = (task) => {
   const {
     id,
@@ -48,6 +77,7 @@ export const getTaskEditTemplate = (task) => {
 
   const dateOutput = dueDate ? formatDate(dueDate) : '';
   const prioritiesTemplate = getPrioritiesTemplate(id, priority);
+  const repeatingTemplate = getRepeatingDaysTemplate(id, repeating);
 
   return `
     <li class="tasks__task">
@@ -86,71 +116,7 @@ export const getTaskEditTemplate = (task) => {
                 <legend class="checkbox-buttons__title">
                   Repeating days
                 </legend>
-                <ul class="checkbox-buttons__list weekdays">
-                  <li class="weekdays__day">
-                    <input
-                      class="visually-hidden"
-                      name="task-1-weekday-mo"
-                      id="task-1-weekday-mo"
-                      type="checkbox"
-                    >
-                    <label for="task-1-weekday-mo">Mo</label>
-                  </li>
-                  <li class="weekdays__day">
-                    <input
-                      class="visually-hidden"
-                      name="task-1-weekday-tu"
-                      id="task-1-weekday-tu"
-                      type="checkbox"
-                    >
-                    <label for="task-1-weekday-tu">Tu</label>
-                  </li>
-                  <li class="weekdays__day">
-                    <input
-                      class="visually-hidden"
-                      name="task-1-weekday-we"
-                      id="task-1-weekday-we"
-                      type="checkbox"
-                    >
-                    <label for="task-1-weekday-we">We</label>
-                  </li>
-                  <li class="weekdays__day">
-                    <input
-                      class="visually-hidden"
-                      name="task-1-weekday-th"
-                      id="task-1-weekday-th"
-                      type="checkbox"
-                    >
-                    <label for="task-1-weekday-th">Th</label>
-                  </li>
-                  <li class="weekdays__day">
-                    <input
-                      class="visually-hidden"
-                      name="task-1-weekday-fr"
-                      id="task-1-weekday-fr"
-                      type="checkbox"
-                    >
-                    <label for="task-1-weekday-fr">Fr</label>
-                  </li>
-                  <li class="weekdays__day">
-                    <input
-                      class="visually-hidden"
-                      name="task-1-weekday-sa"
-                      id="task-1-weekday-sa"
-                      type="checkbox"
-                    >
-                    <label for="task-1-weekday-sa">Sa</label>
-                  </li>
-                  <li class="weekdays__day">
-                    <input
-                      class="visually-hidden"
-                      name="task-1-weekday-su"
-                      id="task-1-weekday-su"
-                      type="checkbox"
-                    >
-                    <label for="task-1-weekday-su">Su</label>
-                  </li>
-                </ul>
+                ${repeatingTemplate}
               </fieldset>
             </li>
             <li>
