@@ -1,11 +1,4 @@
-const PRIORITIES = [
-  'lowest',
-  'low',
-  'normal',
-  'slightly-high',
-  'high',
-  'highest'
-];
+import { PRIORITIES } from '../consts';
 
 const TITLES = [
   'Clean the floor',

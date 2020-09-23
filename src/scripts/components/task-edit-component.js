@@ -1,25 +1,85 @@
-export const getTaskEditTemplate = () => {
+import { formatDate } from '../helpers/common';
+import { PRIORITIES } from '../consts';
+
+const getPriorityTemplate = (taskId, priority, isChecked = false) => {
+  const checkedAttribute = isChecked ? 'checked' : '';
+
+  return `
+    <li class="
+      priorities__priority
+      priorities__priority--${priority}"
+    >
+      <input
+        class="visually-hidden"
+        name="task-${taskId}-priority"
+        id="task-${taskId}-priority-${priority}"
+        type="radio"
+        ${checkedAttribute}
+      >
+      <label
+        for="task-${taskId}-priority-${priority}"
+        aria-label="${priority} priority"
+      ></label>
+    </li>
+  `;
+};
+
+const getPrioritiesTemplate = (taskId, currentPriority = PRIORITIES[0]) => {
+  const prioritiesTemplate = PRIORITIES.map((priority) => {
+    const isChecked = priority === currentPriority;
+
+    return getPriorityTemplate(taskId, priority, isChecked);
+  }).join('');
+
+  return `
+    <ul class="radio-buttons__list priorities">${prioritiesTemplate}</ul>
+  `;
+};
+
+export const getTaskEditTemplate = (task) => {
+  const {
+    id,
+    priority,
+    title,
+    description,
+    dueDate,
+    repeating
+  } = task;
+
+  const dateOutput = dueDate ? formatDate(dueDate) : '';
+  const prioritiesTemplate = getPrioritiesTemplate(id, priority);
+
   return `
     <li class="tasks__task">
-      <article class="task task--edit task--lowest">
-        <form class="task__form" action="#" id="task-1">
-          <p class="task__priority" aria-label="Lowest priority"></p>
+      <article class="task task--edit task--${priority}">
+        <form class="task__form" action="#" id="task-${id}">
+          <p class="task__priority" aria-label="${priority} priority"></p>
           <ul class="task__fields">
             <li class="input">
-              <label for="task-1-title">Title</label>
-              <input name="task-1-title" id="task-1-title" type="text">
+              <label for="task-${id}-title">Title</label>
+              <input
+                name="task-${id}-title"
+                id="task-${id}-title"
+                type="text"
+                value="${title}"
+              >
             </li>
             <li class="input">
-              <label for="task-1-description">Description</label>
+              <label for="task-${id}-description">Description</label>
               <textarea
-                name="task-1-description"
-                id="task-1-description"
+                name="task-${id}-description"
+                id="task-${id}-description"
                 rows="3"
-              ></textarea>
+              >${description}</textarea>
             </li>
             <li class="input input--date">
-              <label for="task-1-date">Date</label>
-              <input name="task-1-date" id="task-1-date" type="text">
+              <label for="task-${id}-date">Date</label>
+              <input
+                name="task-${id}-date"
+                id="task-${id}-date"
+                type="text"
+                value="${dateOutput}"
+              >
             </li>
             <li>
               <fieldset class="checkbox-buttons">
@@ -98,99 +158,7 @@ export const getTaskEditTemplate = () => {
                 <legend class="radio-buttons__title">
                   Priority
                 </legend>
-                <ul class="radio-buttons__list priorities">
-                  <li class="
-                    priorities__priority
-                    priorities__priority--lowest"
-                  >
-                    <input
-                      class="visually-hidden"
-                      name="task-1-priority"
-                      id="task-1-priority-6"
-                      type="radio"
-                      checked
-                    >
-                    <label
-                      for="task-1-priority-6"
-                      aria-label="Lowest priority"
-                    ></label>
-                  </li>
-                  <li class="
-                    priorities__priority
-                    priorities__priority--low"
-                  >
-                    <input
-                      class="visually-hidden"
-                      name="task-1-priority"
-                      id="task-1-priority-5"
-                      type="radio"
-                    >
-                    <label
-                      for="task-1-priority-5"
-                      aria-label="Low priority"
-                    ></label>
-                  </li>
-                  <li class="
-                    priorities__priority
-                    priorities__priority--normal"
-                  >
-                    <input
-                      class="visually-hidden"
-                      name="task-1-priority"
-                      id="task-1-priority-4"
-                      type="radio"
-                    >
-                    <label
-                      for="task-1-priority-4"
-                      aria-label="Normal priority"
-                    ></label>
-                  </li>
-                  <li class="
-                    priorities__priority
-                    priorities__priority--slightly-high"
-                  >
-                    <input
-                      class="visually-hidden"
-                      name="task-1-priority"
-                      id="task-1-priority-3"
-                      type="radio"
-                    >
-                    <label
-                      for="task-1-priority-3"
-                      aria-label="Slightly high priority"
-                    ></label>
-                  </li>
-                  <li class="
-                    priorities__priority
-                    priorities__priority--high"
-                  >
-                    <input
-                      class="visually-hidden"
-                      name="task-1-priority"
-                      id="task-1-priority-2"
-                      type="radio"
-                    >
-                    <label
-                      for="task-1-priority-2"
-                      aria-label="High priority"
-                    ></label>
-                  </li>
-                  <li class="
-                    priorities__priority
-                    priorities__priority--highest"
-                  >
-                    <input
-                      class="visually-hidden"
-                      name="task-1-priority"
-                      id="task-1-priority-1"
-                      type="radio"
-                    >
-                    <label
-                      for="task-1-priority-1"
-                      aria-label="Highest priority"
-                    ></label>
-                  </li>
-                </ul>
+                ${prioritiesTemplate}
               </fieldset>
             </li>
           </ul>

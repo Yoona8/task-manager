@@ -1,24 +1,17 @@
+import {formatDate} from '../helpers/common';
+
 const getIsExpired = (date) => {
   if (date === null) {
     return false;
   }
 
-  console.log(new Date().getMinutes() > date.getMinutes());
   return new Date().getMinutes() > date.getMinutes();
 };
 
 const getDateTemplate = (dueDate) => {
-  const options = {
-    month: 'short',
-    day: '2-digit',
-    hour12: false,
-    hour: '2-digit',
-    minute: '2-digit'
-  };
-
   return `
     <time class="task__deadline" datetime="${dueDate.toUTCString()}">
-      ${dueDate.toLocaleDateString('en-US', options)}
+      ${formatDate(dueDate)}
     </time>
   `;
 };
