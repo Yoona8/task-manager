@@ -14,4 +14,12 @@ const formatDate = (date) => {
   return date.toLocaleDateString('en-US', options);
 };
 
-export { formatDate };
+const getIsExpired = (date) => {
+  if (date === null) {
+    return false;
+  }
+
+  return new Date().getMinutes() > date.getMinutes();
+};
+
+export { formatDate, getIsExpired };

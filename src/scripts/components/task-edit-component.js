@@ -1,4 +1,4 @@
-import { formatDate } from '../helpers/common';
+import {formatDate, getIsExpired} from '../helpers/common';
 import { PRIORITIES } from '../consts';
 
 const getPriorityTemplate = (taskId, priority, isChecked = false) => {
@@ -78,10 +78,12 @@ export const getTaskEditTemplate = (task) => {
   const dateOutput = dueDate ? formatDate(dueDate) : '';
   const prioritiesTemplate = getPrioritiesTemplate(id, priority);
   const repeatingTemplate = getRepeatingDaysTemplate(id, repeating);
+  const deadlineClassName = getIsExpired(dueDate) ? 'task--overdue' : '';
 
   return `
     <li class="tasks__task">
-      <article class="task task--edit task--${priority}">
+      <article
+        class="task task--edit task--${priority} ${deadlineClassName}">
         <form class="task__form" action="#" id="task-${id}">
           <p class="task__priority" aria-label="${priority} priority"></p>
           <ul class="task__fields">

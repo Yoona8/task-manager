@@ -1,12 +1,4 @@
-import {formatDate} from '../helpers/common';
-
-const getIsExpired = (date) => {
-  if (date === null) {
-    return false;
-  }
-
-  return new Date().getMinutes() > date.getMinutes();
-};
+import { formatDate, getIsExpired } from '../helpers/common';
 
 const getDateTemplate = (dueDate) => {
   return `
