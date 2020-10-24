@@ -1,24 +1,29 @@
-export const getFiltersTemplate = () => {
+import {FilterType} from '../consts';
+
+const getFilterTemplate = (filter, isChecked = false) => {
+  const { filterName, tasksCount } = filter;
+  const currentClassName = isChecked ? 'current' : '';
+
+  return `
+    <li>
+      <button class="${currentClassName}" type="button">
+        ${filterName} ${tasksCount}
+      </button>
+    </li>
+  `;
+};
+
+export const getFiltersTemplate = (filters) => {
+  const currentFilterName = FilterType.ALL;
+
+  const filtersTemplate = filters.map((filter) => {
+    const isChecked = filter.filterName === currentFilterName;
+    return getFilterTemplate(filter, isChecked);
+  }).join('');
+
   return `
     <ul class="filters">
-      <li>
-        <button class="current" type="button">All 20</button>
-      </li>
-      <li>
-        <button type="button" disabled>Overdue 20</button>
-      </li>
-      <li>
-        <button type="button">Today 20</button>
-      </li>
-      <li>
-        <button type="button">Repeating 20</button>
-      </li>
-      <li>
-        <button type="button">Favorites 20</button>
-      </li>
-      <li>
-        <button type="button">Archive 20</button>
-      </li>
+      ${filtersTemplate}
     </ul>
   `;
 };
