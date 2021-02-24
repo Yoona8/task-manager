@@ -1,5 +1,5 @@
 import {formatDate, getIsExpired} from '../helpers/common';
-import { PRIORITIES } from '../consts';
+import {DateFormat, PRIORITIES} from '../consts';
 
 const getPriorityTemplate = (taskId, priority, isChecked = false) => {
   const checkedAttribute = isChecked ? 'checked' : '';
@@ -75,7 +75,7 @@ export const getTaskEditTemplate = (task) => {
     repeating
   } = task;
 
-  const dateOutput = dueDate ? formatDate(dueDate) : '';
+  const dateOutput = dueDate ? formatDate(dueDate, DateFormat.VALUE) : '';
   const prioritiesTemplate = getPrioritiesTemplate(id, priority);
   const repeatingTemplate = getRepeatingDaysTemplate(id, repeating);
   const deadlineClassName = getIsExpired(dueDate) ? 'task--overdue' : '';
@@ -109,7 +109,7 @@ export const getTaskEditTemplate = (task) => {
               <input
                 name="task-${id}-date"
                 id="task-${id}-date"
-                type="text"
+                type="date"
                 value="${dateOutput}"
               >
             </li>

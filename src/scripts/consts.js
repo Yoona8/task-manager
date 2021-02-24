@@ -16,4 +16,9 @@ const FilterType = {
   ARCHIVE: 'archive'
 };
 
-export { PRIORITIES, FilterType };
+const DateFormat = {
+  VIEW: 'view',
+  VALUE: 'value'
+};
+
+export { PRIORITIES, FilterType, DateFormat };
