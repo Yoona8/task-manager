@@ -31,7 +31,9 @@ const getIsExpired = (date) => {
     return false;
   }
 
-  return new Date().getMinutes() > date.getMinutes();
+  console.log(new Date().getTime());
+
+  return new Date().getTime() > date.getTime();
 };
 
 export { formatDate, getIsExpired };
