@@ -1,7 +1,7 @@
-export const getMenuTemplate = () => {
+const getMenuTemplate = () => {
   return `
     <nav class="header__nav container">
-      <a href="#" class="header__logo logo">TaskManager</a>
+      <a href="index.html" class="header__logo logo">TaskManager</a>
       <ul class="user-menu">
         <li>
           <a href="#">Add new task</a>
@@ -18,3 +18,5 @@ export const getMenuTemplate = () => {
     </nav>
   `;
 };
+
+export {getMenuTemplate};

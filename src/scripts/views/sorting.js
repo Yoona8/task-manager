@@ -1,4 +1,4 @@
-export const getSortingTemplate = () => {
+const getSortingTemplate = () => {
   return `
     <ul class="main__sorting sorting">
       <li>
@@ -13,3 +13,5 @@ export const getSortingTemplate = () => {
     </ul>
   `;
 };
+
+export {getSortingTemplate};

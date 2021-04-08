@@ -1,45 +1,36 @@
-import {getMenuTemplate} from './components/menu-component';
-import {getFiltersTemplate} from './components/filters-component';
-import {getSortingTemplate} from './components/sorting-component';
-import {getTasksTemplate} from './components/tasks-component';
-import {getTaskTemplate} from './components/task-component';
-import {getTaskEditTemplate} from './components/task-edit-component';
-import {getLoadMoreTemplate} from './components/load-more-component';
-import {getTasks} from './mocks/tasks-mock';
-import {getFilters} from './mocks/filters-mock';
+import {getMenuTemplate} from './views/menu';
+import {getFiltersTemplate} from './views/filters';
+import {getSortingTemplate} from './views/sorting';
+import {getTasksTemplate} from './views/tasks';
+import {getLoadMoreButtonTemplate} from './views/load-more-button';
+import {getTaskTemplate} from './views/task';
+import {getTaskEditTemplate} from './views/task-edit';
 
-const TASKS_COUNT = 10;
+const TasksCount = {
+  ALL: 8,
+  PER_STEP: 8
+};
 
-const tasks = getTasks(TASKS_COUNT);
-
-const filters = getFilters(tasks);
+const tasks = new Array(TasksCount.ALL).fill('');
 
 const render = (container, template, position = 'beforeend') => {
   container.insertAdjacentHTML(position, template);
 };
 
 const headerElement = document.querySelector('.header');
-const mainElement = document.querySelector('.main');
 
 render(headerElement, getMenuTemplate());
 
-const filtersContainerElement = mainElement
-  .querySelector('.main__filters');
+const filtersElement = document.querySelector('.main__filters');
 
-render(filtersContainerElement, getFiltersTemplate(filters));
+render(filtersElement, getFiltersTemplate());
 
-const boardElement = mainElement.querySelector('.board');
+const boardElement = document.querySelector('.board');
 
 render(boardElement, getSortingTemplate());
 render(boardElement, getTasksTemplate());
-render(boardElement, getLoadMoreTemplate());
+render(boardElement, getLoadMoreButtonTemplate());
 
 const tasksElement = boardElement.querySelector('.tasks');
 
-tasks.forEach((task, index) => {
-  if (index === 0) {
-    render(tasksElement, getTaskEditTemplate(task));
-  } else {
-    render(tasksElement, getTaskTemplate(task));
-  }
-});
+tasks.forEach(() => render(tasksElement, getTaskTemplate()));
