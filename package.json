@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/Yoona8/starter-npm-scripts#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.27.10",
     "editorconfig-checker": "^3.1.0",
     "html-minifier": "^4.0.0",
     "postcss-cli": "^7.1.2",
